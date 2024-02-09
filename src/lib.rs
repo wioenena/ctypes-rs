@@ -35,15 +35,15 @@ pub mod ctypes {
         define_c_type!(u_long_t, u64);
         define_c_type!(float_t, f32);
         define_c_type!(double_t, f64);
-        define_c_type!(void, ());
         define_c_type!(int_max_t, self::int_t);
         define_c_type!(size_t, self::u_long_t);
         define_c_type!(ssize_t, self::long_t);
         define_c_type!(ptrdiff_t, self::long_t);
+        pub enum void {}
 
         pub mod ptr {
-            define_c_type!(void, *const super::void);
-            define_c_type!(void_mut, *mut super::void);
+            define_c_type!(void_ptr, *const super::void);
+            define_c_type!(void_ptr_mut, *mut super::void);
             define_c_type!(nullptr_t, *const super::void);
             define_c_type!(nullptr_mut_t, *mut super::void);
         }
