@@ -1,4 +1,8 @@
 mod macros;
+#[allow(non_camel_case_types)]
+#[cfg(feature = "win_types")]
+pub mod win_types;
+
 
 #[allow(non_camel_case_types)]
 pub mod core {
@@ -74,6 +78,3 @@ pub mod core {
     }
 }
 
-#[allow(non_camel_case_types)]
-#[cfg(feature = "win_types")]
-pub mod win_types;
