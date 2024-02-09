@@ -1,13 +1,11 @@
+#[macro_use]
 mod macros;
 #[allow(non_camel_case_types)]
 #[cfg(feature = "win_types")]
 pub mod win_types;
 
-
 #[allow(non_camel_case_types)]
 pub mod core {
-    use crate::def_type;
-
     def_type!(char_t, i8);
     def_type!(u_char_t, u8);
     def_type!(short_t, i16);
@@ -39,8 +37,6 @@ pub mod core {
     pub enum void {}
 
     pub mod ptr {
-        use crate::def_type;
-
         def_type!(void_ptr_t, *const super::void);
         def_type!(void_ptr_t_mut, *mut super::void);
         def_type!(nullptr_t, *const super::void);
@@ -49,8 +45,6 @@ pub mod core {
 
     #[allow(non_upper_case_globals)]
     pub mod constants {
-        use crate::def_constant;
-
         def_constant!(CHAR_MIN, i8, i8::MIN);
         def_constant!(CHAR_MAX, i8, i8::MAX);
         def_constant!(UCHAR_MIN, u8, u8::MIN);
@@ -77,4 +71,3 @@ pub mod core {
         def_constant!(nullptr, super::ptr::nullptr_t, 0 as super::ptr::nullptr_t);
     }
 }
-
