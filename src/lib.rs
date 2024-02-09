@@ -57,50 +57,23 @@ pub mod core {
         def_constant!(UINT_MAX, super::u_int_t, super::u_int_t::MAX);
         def_constant!(LONG_MIN, super::long_t, super::long_t::MIN);
         def_constant!(LONG_MAX, super::long_t, super::long_t::MAX);
-        def_constant!(
-            ULONG_MIN,
-            super::u_long_t,
-            super::u_long_t::MIN
-        );
-        def_constant!(
-            ULONG_MAX,
-            super::u_long_t,
-            super::u_long_t::MAX
-        );
+        def_constant!(ULONG_MIN, super::u_long_t, super::u_long_t::MIN);
+        def_constant!(ULONG_MAX, super::u_long_t, super::u_long_t::MAX);
         def_constant!(SHORT_MIN, super::short_t, super::short_t::MIN);
         def_constant!(SHORT_MAX, super::short_t, super::short_t::MAX);
-        def_constant!(
-            USHORT_MIN,
-            super::u_short_t,
-            super::u_short_t::MIN
-        );
-        def_constant!(
-            USHORT_MAX,
-            super::u_short_t,
-            super::u_short_t::MAX
-        );
+        def_constant!(USHORT_MIN, super::u_short_t, super::u_short_t::MIN);
+        def_constant!(USHORT_MAX, super::u_short_t, super::u_short_t::MAX);
         def_constant!(FLOAT_MIN, super::float_t, super::float_t::MIN);
         def_constant!(FLOAT_MAX, super::float_t, super::float_t::MAX);
-        def_constant!(
-            DOUBLE_MIN,
-            super::double_t,
-            super::double_t::MIN
-        );
-        def_constant!(
-            DOUBLE_MAX,
-            super::double_t,
-            super::double_t::MAX
-        );
+        def_constant!(DOUBLE_MIN, super::double_t, super::double_t::MIN);
+        def_constant!(DOUBLE_MAX, super::double_t, super::double_t::MAX);
         def_constant!(TRUE, u8, 1);
         def_constant!(FALSE, u8, 0);
         def_constant!(NULL, u8, 0);
-        def_constant!(
-            nullptr,
-            super::ptr::nullptr_t,
-            0 as super::ptr::nullptr_t
-        );
+        def_constant!(nullptr, super::ptr::nullptr_t, 0 as super::ptr::nullptr_t);
     }
 }
 
 #[allow(non_camel_case_types)]
+#[cfg(feature = "win_types")]
 pub mod win_types;
