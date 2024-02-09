@@ -184,9 +184,6 @@ pub type PCUNICODE_STRING = *const UNICODE_STRING;
 def_type!(USHORT, crate::core::u_short_t);
 def_type!(USN, LONGLONG);
 def_type!(VOID, crate::core::void);
-pub enum WCHAR {
-    U16(crate::core::wchar16_t),
-    U32(crate::core::wchar32_t),
-}
+def_type!(WCHAR, crate::core::wchar32_t);
 def_type!(WORD, crate::core::u_short_t);
 def_type!(WPARAM, UINT_PTR);
