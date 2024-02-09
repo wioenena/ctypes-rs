@@ -10,7 +10,7 @@ macro_rules! define_constant {
     };
 }
 
-pub mod ctypes {
+pub mod core {
     #[allow(non_camel_case_types)]
     pub mod types {
         define_c_type!(char_t, i8);
@@ -42,8 +42,8 @@ pub mod ctypes {
         pub enum void {}
 
         pub mod ptr {
-            define_c_type!(void_ptr, *const super::void);
-            define_c_type!(void_ptr_mut, *mut super::void);
+            define_c_type!(void_ptr_t, *const super::void);
+            define_c_type!(void_ptr_t_mut, *mut super::void);
             define_c_type!(nullptr_t, *const super::void);
             define_c_type!(nullptr_mut_t, *mut super::void);
         }
@@ -105,3 +105,5 @@ pub mod ctypes {
         );
     }
 }
+
+pub mod win_types;
